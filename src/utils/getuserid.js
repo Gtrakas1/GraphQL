@@ -5,7 +5,7 @@ const header =  request.request ? request.request.headers.authorization : reques
 
 if(header){
     const toKen = header.replace('Bearer ', '')
-    const decoded = jwt.verify(toKen, {token: process.env.PRISMA_TOKEN})
+    const decoded = jwt.verify(toKen,process.env.PRISMA_TOKEN)
     return decoded.userId
     
 }
