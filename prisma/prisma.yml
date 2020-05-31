@@ -2,4 +2,4 @@
 endpoint: ${env:PRISMA_ENDPOINT}
 datamodel: datamodel.graphql
 secret: ${env:PRISMA_SECRET}
-token:  ${env: PRISMA_TOKEN}
+token: ${env:PRISMA_TOKEN}

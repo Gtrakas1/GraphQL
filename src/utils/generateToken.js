@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken'
 const generateToken = (userId)=>{
-    return jwt.sign({userId},process.env.PRISMA_TOKEN,{ expiresIn: '7 days'})
+    return jwt.sign({userId},{token: process.env.PRISMA_TOKEN},{ expiresIn: '7 days'})
 
 
 }
