@@ -1,0 +1,24 @@
+type User {
+  id: ID! @unique
+  username: String! @unique
+  review: [Review!]! @relation(name: "ReviewToUser", onDelete: CASCADE)
+}
+
+type VideoGame{
+  id: ID! @unique
+  title: String!
+  studio: String!
+  gamecode: String!
+  review: [Review!]! @relation(name:"ReviewToVideoGame", onDelete: CASCADE)
+
+}
+
+type Review{
+  id: ID! @unique
+  text: String!
+  rating: Int!
+  author: User! @relation(name: "ReviewToUser", onDelete: SET_NULL)
+  videogame: VideoGame! @relation(name: "ReviewToVideoGame", onDelete: SET_NULL)
+}
+
+
